@@ -1,0 +1,90 @@
+{
+  "age": {
+    "1": {
+      "title": "20 to 39",
+      "percent": 44.9
+    },
+    "2": {
+      "title": "40 to 59",
+      "percent": 37.7
+    },
+    "3": {
+      "title": "60 & older",
+      "percent": 24.1
+    }
+  },
+  "income": {
+    "1": {
+      "title": "Lower Income",
+      "percent": 31.7
+    },
+    "2": {
+      "title": "Middle Income",
+      "percent": 36.4
+    },
+    "3": {
+      "title": "High Income",
+      "percent": 42
+    }
+  },
+  "race": {
+    "1": {
+      "title": "Black",
+      "percent": 42.4
+    },
+    "2": {
+      "title": "White",
+      "percent": 37.6
+    },
+    "3": {
+      "title": "Asian",
+      "percent": 30.6
+    },
+    "4": {
+      "title": "Hispanic",
+      "percent": 35.5
+    }
+  },
+  "time": {
+    "1": {
+      "title": "Lunch",
+      "percent": 43.7
+    },
+    "2": {
+      "title": "Dinner",
+      "percent": 42
+    },
+    "3": {
+      "title": "Breakfast",
+      "percent": 22.7
+    },
+    "4": {
+      "title": "Snack",
+      "percent": 22.6
+    }
+  },
+  "gender": {
+    "1": {
+      "title": "Men",
+      "percent": 37.9
+    },
+    "2": {
+      "title": "Women",
+      "percent": 35.4
+    }
+  },
+  "last_week": {
+    "1": {
+      "title": 2010,
+      "percent": 79
+    },
+    "2": {
+      "title": 2013,
+      "percent": 83
+    },
+    "3": {
+      "title": 2016,
+      "percent": 91
+    }
+  }
+}
