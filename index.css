@@ -4,27 +4,26 @@ body {
 }
 
 header {
-  background-color: #bf0c0c;
   margin: 0 -15px;
   text-align: center;
 }
 
 h1 {
-  color: white;
+  color: #bf0c0c;
   font-family: 'Fredoka One', 'Arial', sans-serif;
-  font-size: 50px;
+  font-size: 72px;
   font-style: italic;
 }
 
 h2 {
-  color: white;
+  color: #bf0c0c;
   font-family: 'Fredoka One', 'Arial', sans-serif;
   font-style: italic;
   letter-spacing: .1rem;
 }
 
 h5 {
-  background-color: #bf0c0c;
+  background-color: #333;
   border-bottom-right-radius: 32px;
   border-top-right-radius: 32px;
   color: white;
@@ -54,14 +53,12 @@ img {
 
 .black-heading {
   background-color: rgb(45,45,45);
+  border-radius: 8px;
   color: white;
 }
 
 .black-wrapper p {
   text-align: center;
-  /* top:50%;
-  left:50%;
-  transform: translate(-50%, -50%); */
   margin:0;
 }
 
@@ -70,18 +67,27 @@ img {
   width: auto;
 }
 
+.person {
+  /* height: 110px; */
+}
+
 .person p {
   display: inline-block;
-  width: 80px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.person p.title {
+  width: 95px;
 }
 
 .person svg {
   display: inline-block;
-  height: 40px;
+  height: 54px;
 }
 
 g {
   display: inline-block;
-  height: 40px;
+  height: 54px;
   width: auto;
 }
