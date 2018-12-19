@@ -3,11 +3,11 @@ d3.json( 'data.json' ).then(function(data){
 })
 
 function generate(dataset){
+  createCircleGraph( '#graphic-income', dataset.income );
   createPersonGraph( '#graphic-age', dataset.age );
   createPersonGraph( '#graphic-race', dataset.race );
-  createPersonGraph( '#graphic-gender', dataset.gender );
+  createCircleGraph( '#graphic-gender', dataset.gender );
   // createCircleGraph( '#graphic-time-of-day', dataset.time );
-  createCircleGraph( '#graphic-income', dataset.income );
 }
 
 function createCircleGraph( target, data ) {
@@ -20,110 +20,56 @@ function createCircleGraph( target, data ) {
   .data( Object.keys(data) )
   .enter()
   .append( 'div' )
-  .attr( 'class', 'circle col-4' )
+  .attr( 'class', 'circle col-' + 12/Object.keys(data).length )
 
   el.append( 'p' )
   .text( function( d ){
+    // console.log(Object.keys(data).length)
     return data[d].title;
   });
 
-  // let arc = d3.arc()
-  //             .innerRadius(50)
-  //             .outerRadius(70)
-  //             .startAngle(0)
-  //             .endAngle( pi * 2 );
-
-  function drawArc( percent ){
+  function drawArc( innerRadius, outerRadius, percent ){
     let arc = d3.arc()
-              .innerRadius(50)
-              .outerRadius(70)
+              .innerRadius(innerRadius)
+              .outerRadius(outerRadius)
               .startAngle(0)
               .endAngle( pi * 2 * (percent/100) );
     return arc();
   }
 
+
+
   // drawArc( 37.1 );
 
-  el.append( 'svg')
+  let percentageCircle = el.append( 'svg')
     .attr( 'height', '150px' )
     .attr( 'width', '150px' )
-    .append( 'path')
+
+  percentageCircle.append( 'path')
     .attr( 'd', function(d){
-      return drawArc( data[d].percent );
-      // return d3.arc()
-      //           .innerRadius(50)
-      //           .outerRadius(70)
-      //           .startAngle(0)
-      //           .endAngle( pi * 2 * (data[d].percent / 100) );
+      return drawArc( 55, 65, 100 );
     })
-    // function(d){
-    // drawArc( 37.1 )
-    //   return drawArc( data[d].percent );
-    // })
+    .attr( 'fill', 'gray' )
+    .attr( 'transform', 'translate(75,75)' )
+
+  percentageCircle.append( 'path')
+    .attr( 'd', function(d){
+      return drawArc( 50, 70, data[d].percent );
+    })
     .attr( 'fill', 'red' )
     .attr( 'transform', 'translate(75,75)' )
 
-//   var arc = d3.svg.arc()
-//     .innerRadius(50)
-//     .outerRadius(70)
-//     .startAngle(45 * (pi/180)) //converting from degs to radians
-//     .endAngle(3) //just radians
-//
-// vis.attr("width", "400").attr("height", "400") // Added height and width so arc is visible
-//     .append("path")
-//     .attr("d", arc)
-//     .attr("fill", "red")
-//     .attr("transform", "translate(200,200)");
-
-  // let pie = d3.pie();
-  //
-  // let circle = d3.arc()
-  //             .innerRadius( 55 )
-  //             .outerRadius( 60 );
-  //
-  // let svg = el.append( 'svg' )
-  //             .attr( 'width', width )
-  //             .attr( 'height', height )
-  //             .attr( 'fill', 'blue' );
-  //
-  // let arc = svg.selectAll( 'g.arc' )
-  //               .append( 'g' )
-  //               .attr( 'class', 'arc' )
-  //               .attr( 'transform', 'translate(' + 55 + ',' + height/2 + ')')
-  //
-  // arcs.append( 'path' )
-  //     .attr( 'fill', 'blue' )
-  //     .attr( 'd', arc );
-  //
-  // let arcs = svg.selectAll( 'g.arc' )
-  //               .data( pie( Object.keys(data) ) )
-  //               .enter()
-  //               .append( 'g' )
-  //               .attr( 'class', 'arc' )
-  //               .attr( 'transform',
-  //                       'translate(' + 55 + ',' + height / 2 + ')' )
-  //
-  // arcs.append( 'path' )
-  //     .attr( 'fill', 'blue' )
-  //     .attr( 'd', arc );
-  //
-  // arcs.append('text')
-  //     .attr('transform', function(d, i){
-  //       console.log( d );
-  //       return "translate(" + arc.centroid(d) + ")";
-  //     })
-  //     .attr( 'text-anchor', 'text-middle' )
-  //     .text(function(d){
-  //       return d.value;
-  //     });
-
-  // let circleGraph = el.append( 'svg' );
-  // 6-3
-
-  el.append( 'p' )
+  // el
+  percentageCircle.append( 'text' )
   .text( function( d ){
-    return data[d].percent;
+    return data[d].percent + '%';
   })
+  // .attr( 'transform', 'translate(75,75)' );
+  .attr( 'x', '75' )
+  .attr( 'y', '85' )
+  .style( 'text-anchor', 'middle')
+  .attr( 'fill', 'black' )
+  .attr( 'font-size', '32px' )
 }
 
 function createPersonGraph( target, data){

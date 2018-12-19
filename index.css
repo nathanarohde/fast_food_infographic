@@ -1,4 +1,5 @@
 body {
+  background-color: #efe2da;
   font-size: 18px;
 }
 
@@ -10,15 +11,29 @@ header {
 
 h1 {
   color: white;
+  font-family: 'Fredoka One', 'Arial', sans-serif;
   font-size: 50px;
   font-style: italic;
-  font-weight: 700;
 }
 
 h2 {
   color: white;
+  font-family: 'Fredoka One', 'Arial', sans-serif;
   font-style: italic;
-  font-weight: 700;
+  letter-spacing: .1rem;
+}
+
+h5 {
+  background-color: #bf0c0c;
+  border-bottom-right-radius: 32px;
+  border-top-right-radius: 32px;
+  color: white;
+  display: inline-block;
+  font-family: 'Source Sans Pro', 'Arial', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  padding: 8px 16px;
+  width: auto;
 }
 
 img {
@@ -27,21 +42,18 @@ img {
 }
 
 .spotlight {
+  font-family: 'Source Sans Pro', 'Arial', sans-serif;
   font-size: 24px;
   line-height: 42px;
 }
 
 .emphasis {
-  font-size: 200%;
+  font-size: 150%;
+  font-weight: 500;
 }
 
-.black-wrapper {
-  display: block;
-  width: 100%;
-  height: auto;
-  /* padding: 50% 0;
-  border-radius: 50%; */
-  background-color: #333;
+.black-heading {
+  background-color: rgb(45,45,45);
   color: white;
 }
 
@@ -51,11 +63,6 @@ img {
   left:50%;
   transform: translate(-50%, -50%); */
   margin:0;
-}
-
-.beige {
-  background-color: #f5deb3;
-  color: #333;
 }
 
 .circle svg {
