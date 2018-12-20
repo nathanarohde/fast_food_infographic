@@ -52,7 +52,7 @@ function createCircleGraph( target, data ) {
     .attr( 'd', function(d){
       return drawArc( 50, 70, data[d].percent );
     })
-    .attr( 'fill', 'red' )
+    .attr( 'fill', '#bf0c0c' )
     .attr( 'transform', 'translate(75,75)' )
 
   // el
