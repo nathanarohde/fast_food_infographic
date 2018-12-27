@@ -15,16 +15,16 @@
   },
   "income": {
     "1": {
-      "title": "Lower Income",
-      "percent": 31.7
+      "title": "High Income",
+      "percent": 42
     },
     "2": {
       "title": "Middle Income",
       "percent": 36.4
     },
     "3": {
-      "title": "High Income",
-      "percent": 42
+      "title": "Lower Income",
+      "percent": 31.7
     }
   },
   "race": {

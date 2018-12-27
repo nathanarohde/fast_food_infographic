@@ -4,7 +4,7 @@ body {
 }
 
 header {
-  margin: 0 -15px;
+  margin: 0 -30px;
   text-align: center;
 }
 
@@ -19,7 +19,7 @@ h2 {
   letter-spacing: .1rem;
 }
 
-h5 {
+h3 {
   background-color: #333;
   border-bottom-right-radius: 32px;
   border-top-right-radius: 32px;
@@ -32,7 +32,7 @@ h5 {
   width: auto;
 }
 
-img {
+.fit-image-to-parent {
   padding: 24px;
   width: 100%;
 }
@@ -64,13 +64,8 @@ img {
   margin:0;
 }
 
-.circle svg {
-  height: auto;
-  width: auto;
-}
-
-.person {
-  /* height: 110px; */
+.circle {
+  text-align: center;
 }
 
 .person p {

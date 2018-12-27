@@ -20,11 +20,17 @@ function createCircleGraph( target, data ) {
   .data( Object.keys(data) )
   .enter()
   .append( 'div' )
-  .attr( 'class', 'circle col-' + 12/Object.keys(data).length )
+  .attr( 'class', 'circle col-md-' + 12/Object.keys(data).length + ' col-sm-12' )
 
-  el.append( 'p' )
+  el.append('img')
+  .attr( 'src', function( d ){
+    return  './images/' + data[d].title + '.png';
+  })
+  .attr( 'height', '175px' )
+  .attr( 'width', '175px' );
+
+  el.append( 'h4' )
   .text( function( d ){
-    // console.log(Object.keys(data).length)
     return data[d].title;
   });
 
@@ -60,7 +66,6 @@ function createCircleGraph( target, data ) {
   .text( function( d ){
     return data[d].percent + '%';
   })
-  // .attr( 'transform', 'translate(75,75)' );
   .attr( 'x', '75' )
   .attr( 'y', '85' )
   .style( 'text-anchor', 'middle')
